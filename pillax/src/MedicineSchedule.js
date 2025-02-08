@@ -81,9 +81,8 @@ const MedicineSchedule = () => {
           <div key={index} className="medicine-item" onClick={() => { setSelectedMedicine(medicine); setShowInfoPopup(true); }}>
             <div className="image"></div>
             <div className="medicine-info">
-              <p><strong>Name:</strong>{medicine.name}</p>
+              <p><strong>{medicine.name}</strong></p>
               <p><strong>Time:</strong> {medicine.time}</p>
-              <p><strong>Tip:</strong> {medicine.tip}</p>
               <p><strong>Pieces:</strong> {medicine.pieces}</p>
             </div>
           </div>
@@ -98,8 +97,7 @@ const MedicineSchedule = () => {
               <div className="medicine-image"></div>
               <div className="medicine-info-detail">
                 <p><strong>Name:</strong> {selectedMedicine.name}</p>
-                <p><strong>Occurrence:</strong> {selectedMedicine.occurrence}</p>
-                <p><strong>Date/Time:</strong> {selectedMedicine.dateTime}</p>
+                <p><strong>Date/Time:</strong> {selectedMedicine.time}</p>
                 <p><strong>Tip:</strong> {selectedMedicine.tip}</p>
                 <p><strong>Pieces:</strong> {selectedMedicine.pieces}</p>
               </div>
