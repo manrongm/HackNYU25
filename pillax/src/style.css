@@ -9,10 +9,10 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-  }
-  
-  /* Main Container - Full Screen */
-  .container {
+}
+
+/* Main Container - Full Screen */
+.container {
     width: 100vw;
     height: 100vh;
     background: white;
@@ -20,10 +20,10 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-  }
-  
-  /* Header */
-  .header {
+}
+
+/* Header */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,10 +32,10 @@ body {
     font-size: 2rem;
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Welcome Button */
-  .header button {
+}
+
+/* Welcome Button */
+.header button {
     background: white;
     border: none;
     padding: 10px 16px;
@@ -43,16 +43,16 @@ body {
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Add Button */
-  .add-button {
+}
+
+/* Add Button */
+.add-button {
     display: flex;
     justify-content: center;
     margin: 15px 0;
-  }
-  
-  .add-button button {
+}
+
+.add-button button {
     background: #4b5563; /* Dark gray */
     color: white;
     padding: 14px 28px;
@@ -61,20 +61,20 @@ body {
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Scrollable Medicine List - Full Height */
-  .medicine-list {
+}
+
+/* Scrollable Medicine List - Full Height */
+.medicine-list {
     flex-grow: 1;
     overflow-y: auto;
     border: 1px solid #d1d5db;
     padding: 15px;
     border-radius: 10px;
     background: #f9fafb;
-  }
-  
-  /* Medicine Item */
-  .medicine-item {
+}
+
+/* Medicine Item */
+.medicine-item {
     display: flex;
     align-items: center;
     background: #e5e7eb; /* Light gray */
@@ -82,21 +82,118 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Medicine Image */
-  .medicine-item .image {
+    justify-content: space-between;
+}
+
+/* Medicine Image */
+.medicine-item .image {
     width: 80px;
     height: 80px;
     background: #6b7280; /* Placeholder color */
     border-radius: 10px;
-  }
-  
-  /* Medicine Description */
-  .medicine-item p {
+}
+
+/* Medicine Description */
+.medicine-info {
+    flex-grow: 1;
     margin-left: 20px;
     font-size: 1.2rem;
-  }
+}
+
+/* Add to Schedule Button */
+.add-cart-btn {
+    background: #4b5563;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Content */
+.popup-content {
+    background: #f3f3f3;
+    padding: 30px;
+    border-radius: 12px;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Popup Options */
+.popup-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.popup-option {
+    background: #d1d5db;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.popup-option:hover {
+    background: #b0b3b8;
+}
+
+/* Form Styling */
+.medicine-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.medicine-form label {
+    font-size: 1.2rem;
+}
+
+.medicine-form input,
+.medicine-form select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+}
+
+.finish-btn {
+    background: #b0b3b8;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
   
   
