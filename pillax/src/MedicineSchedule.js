@@ -6,11 +6,15 @@ const MedicineSchedule = () => {
   const [showInfoPopup, setShowInfoPopup] = useState(false);
   const [showAddPopup, setShowAddPopup] = useState(false);
   const [selectedMedicine, setSelectedMedicine] = useState(null);
-  const [step, setStep] = useState(1);
   const [medicineName, setMedicineName] = useState("");
   const [medicineInfo, setMedicineInfo] = useState(null);
+  const [name, setName] = useState("")
+  const [tip, setTip] = useState("");
+  const [pieces, setPieces] = useState("");
   const [occurrence, setOccurrence] = useState("");
+  const [step, setStep] = useState(1);
   const [timeSlots, setTimeSlots] = useState([]);
+  const [medicineList, setMedicineList] = useState([]);
 
   // Simulating Backend API Call
   const fetchMedicineInfo = async () => {
@@ -36,6 +40,20 @@ const MedicineSchedule = () => {
     setSelectedMedicine(medicine);
     setShowInfoPopup(true);
   };
+
+  const handleFinish = () => {
+    const newMedicineEntries = timeSlots.map(time => ({
+      name: medicineName,
+      time,
+      tip,
+      pieces,
+    }));
+    
+    const updatedList = [...medicineList, ...newMedicineEntries].sort((a, b) => a.time.localeCompare(b.time));
+    setMedicineList(updatedList);
+    setShowAddPopup(false);
+  };
+
   const handleOccurrenceChange = (e) => {
     const value = parseInt(e.target.value) || 0;
     setOccurrence(value);
@@ -59,13 +77,14 @@ const MedicineSchedule = () => {
       </div>
 
       <div className="medicine-list">
-        {medicines.map((medicine, index) => (
-          <div key={index} className="medicine-item" onClick={() => handleMedicineClick(medicine)}>
+        {medicineList.map((medicine, index) => (
+          <div key={index} className="medicine-item" onClick={() => { setSelectedMedicine(medicine); setShowInfoPopup(true); }}>
             <div className="image"></div>
             <div className="medicine-info">
-              <p>{medicine.name}</p>
-              <p>{medicine.occurrence}</p>
-              <button className="add-cart-btn">Add to Schedule</button>
+              <p><strong>Name:</strong>{medicine.name}</p>
+              <p><strong>Time:</strong> {medicine.time}</p>
+              <p><strong>Tip:</strong> {medicine.tip}</p>
+              <p><strong>Pieces:</strong> {medicine.pieces}</p>
             </div>
           </div>
         ))}
@@ -92,7 +111,7 @@ const MedicineSchedule = () => {
       {showAddPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <button className="close-btn" onClick={() => { setShowAddPopup(false); setStep(1); }}>×</button>
+            <button className="close-btn" onClick={() => { setShowAddPopup(false); setStep(1); }}></button>
             {step === 1 ? (
               <div className="popup-options">
                 <div className="popup-option" onClick={() => setStep(2)}>
@@ -104,11 +123,13 @@ const MedicineSchedule = () => {
               </div>
             ) : step === 2 ? (
               <form className="medicine-form">
-                <label>Name: <input type="text" name="name" /></label>
+                <label>Name: <input type="text" value={medicineName} onChange={(e) => setMedicineName(e.target.value)} /></label>
                 <label>Occurrence: <input type="number" min="1" value={occurrence} onChange={handleOccurrenceChange} /></label>
               {timeSlots.map((time, index) => (
                 <label key={index}>Time {index + 1}: <input type="time" value={time} onChange={(e) => handleTimeChange(index, e.target.value)} /></label>
               ))}
+              <label>Tip: <input type="text" value={tip} onChange={(e) => setTip(e.target.value)} /></label>
+              <label>Pieces: <input type="text" value={pieces} onChange={(e) => setPieces(e.target.value)} /></label>
                 <label>Date/Time: <input type="date" name="date-time" /></label>
                 <label>Notification:
                   <select name="notification">
@@ -116,11 +137,9 @@ const MedicineSchedule = () => {
                     <option value="no">No</option>
                   </select>
                 </label>
-                <label>Tip: <input type="text" name="tip" /></label>
-                <label>Pieces: <input type="text" name="pieces" /></label>
                 <div className="button-group">
                   <button type="button" className="finish-btn" onClick={() => setStep(1)}>Cancel</button>
-                  <button type="button" className="finish-btn" onClick={() => { setShowAddPopup(false); setStep(1); }}>Finish</button>
+                  <button type="button" className="finish-btn" onClick={() => {handleFinish()}}>Finish</button>
                 </div>
               </form>
             ) : step === 4 ? (
