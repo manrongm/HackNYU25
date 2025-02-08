@@ -1,17 +1,13 @@
-/* General Page Styling */
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f4f6; /* Light gray background */
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef5f9; /* Soft blue-gray background */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+    color: #333;
 }
 
-/* Main Container - Full Screen */
+/* Container */
 .container {
     width: 100vw;
     height: 100vh;
@@ -27,90 +23,112 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #d1d5db; /* Medium gray */
+    background: #0077b6; /* Medical blue */
     padding: 20px;
     font-size: 2rem;
     font-weight: bold;
+    color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-/* Welcome Button */
+/* Welcome / Logout Button */
 .header button {
-    background: white;
+    background: #f8f9fa;
     border: none;
     padding: 10px 16px;
     font-size: 1.2rem;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
 }
 
-/* Add Button */
+.header button:hover {
+    background: #e0e0e0;
+}
+
+/* Add Medicine Button */
 .add-button {
     display: flex;
     justify-content: center;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 .add-button button {
-    background: #4b5563; /* Dark gray */
+    background: #00b4d8; /* Lighter blue */
     color: white;
-    padding: 14px 28px;
+    padding: 14px 32px;
     font-size: 1.5rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Scrollable Medicine List - Full Height */
+.add-button button:hover {
+    background: #0096c7; /* Darker blue */
+}
+
+/* Scrollable Medicine List */
 .medicine-list {
     flex-grow: 1;
     overflow-y: auto;
-    border: 1px solid #d1d5db;
-    padding: 15px;
-    border-radius: 10px;
-    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+    background: #ffffff;
 }
 
 /* Medicine Item */
 .medicine-item {
     display: flex;
     align-items: center;
-    background: #e5e7eb; /* Light gray */
-    padding: 16px;
+    background: #f8fcff; /* Soft white-blue */
+    padding: 20px;
     margin-bottom: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
     justify-content: space-between;
+}
+
+.medicine-item:hover {
+    transform: scale(1.02);
 }
 
 /* Medicine Image */
 .medicine-item .image {
     width: 80px;
     height: 80px;
-    background: #6b7280; /* Placeholder color */
-    border-radius: 10px;
+    background: #0077b6; /* Blue Placeholder */
+    border-radius: 12px;
 }
 
-/* Medicine Description */
+/* Medicine Info */
 .medicine-info {
     flex-grow: 1;
     margin-left: 20px;
     font-size: 1.2rem;
+    font-weight: 500;
 }
 
 /* Add to Schedule Button */
 .add-cart-btn {
-    background: #4b5563;
+    background: #00b4d8;
     color: white;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 12px 18px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
 }
 
-/* Popup Overlay */
+.add-cart-btn:hover {
+    background: #0096c7;
+}
+
+/* Popup Styling */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -125,11 +143,11 @@ body {
 
 /* Popup Content */
 .popup-content {
-    background: #f3f3f3;
+    background: white;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 16px;
     width: 40%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
 }
@@ -153,7 +171,7 @@ body {
 }
 
 .popup-option {
-    background: #d1d5db;
+    background: #e3f2fd;
     padding: 15px;
     font-size: 1.2rem;
     border-radius: 8px;
@@ -162,199 +180,58 @@ body {
 }
 
 .popup-option:hover {
-    background: #b0b3b8;
+    background: #bbdefb;
 }
 
 /* Form Styling */
 .medicine-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     text-align: left;
 }
 
 .medicine-form label {
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .medicine-form input,
 .medicine-form select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    border: 1px solid #b0bec5;
 }
 
 .finish-btn {
-    background: #b0b3b8;
-    padding: 10px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Button Group */
-.button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-/* Finish Button */
-.finish-btn {
-    background: #6b7280;
+    background: #0077b6;
     color: white;
-    padding: 10px;
+    padding: 12px;
     font-size: 1.2rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    flex: 1;
-    margin-left: 10px;
+    transition: 0.3s ease-in-out;
 }
 
 .finish-btn:hover {
-    background: #4b5563;
+    background: #005f99;
 }
 
-/* Cancel Button */
-.cancel-btn {
-    background: #d1d5db;
-    color: black;
-    padding: 10px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    flex: 1;
-    margin-right: 10px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+    }
 
-.cancel-btn:hover {
-    background: #b0b3b8;
-}
+    .medicine-form input,
+    .medicine-form select {
+        font-size: 1rem;
+    }
 
-/* Help Button */
-.help-btn {
-    background: #6b7280;
-    color: white;
-    padding: 10px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    flex: 1;
+    .add-button button {
+        font-size: 1.2rem;
+    }
 }
-
-.help-btn:hover {
-    background: #4b5563;
-}
-
-/* Medicine Info Popup */
-.medicine-info-popup {
-    text-align: left;
-}
-
-.medicine-info-box {
-    background: #d1d5db;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-/* Medicine List */
-.medicine-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 15px;
-    border-radius: 10px;
-    background: #f9fafb;
-}
-
-/* Medicine Item */
-.medicine-item {
-    display: flex;
-    align-items: center;
-    background: #e5e7eb;
-    padding: 16px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.medicine-item:hover {
-    background: #d1d5db;
-}
-
-/* Medicine Image */
-.image {
-    width: 80px;
-    height: 80px;
-    background: #6b7280;
-    border-radius: 10px;
-}
-
-/* Medicine Info */
-.medicine-info {
-    flex-grow: 1;
-    margin-left: 20px;
-    font-size: 1.2rem;
-}
-
-/* View Details Button */
-.add-cart-btn {
-    background: #4b5563;
-    color: white;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-
-.add-cart-btn:hover {
-    background: #374151;
-}
-
-/* Medicine Detail Page */
-.medicine-detail {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.medicine-image {
-    width: 100px;
-    height: 100px;
-    background: #6b7280;
-    border-radius: 10px;
-    margin-right: 20px;
-}
-
-.medicine-info-detail {
-    flex-grow: 1;
-    font-size: 1.2rem;
-}
-
-/* Back Button */
-.back-btn {
-    background: #4b5563;
-    color: white;
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.back-btn:hover {
-    background: #374151;
-}
-

@@ -104,7 +104,7 @@ const MedicineSchedule = () => {
                 <label>Tip: <input type="text" name="tip" /></label>
                 <label>Pieces: <input type="text" name="pieces" /></label>
                 <div className="button-group">
-                  <button type="button" className="cancel-btn" onClick={() => setStep(1)}>Cancel</button>
+                  <button type="button" className="finish-btn" onClick={() => setStep(1)}>Cancel</button>
                   <button type="button" className="finish-btn" onClick={() => { setShowAddPopup(false); setStep(1); }}>Finish</button>
                 </div>
               </form>
@@ -119,8 +119,8 @@ const MedicineSchedule = () => {
                   </select>
                 </label>
                 <div className="button-group">
-                  <button type="button" className="cancel-btn" onClick={() => setStep(1)}>Cancel</button>
-                  <button type="button" className="help-btn" onClick={fetchMedicineInfo}>Get Help</button>
+                  <button type="button" className="finish-btn" onClick={() => setStep(1)}>Cancel</button>
+                  <button type="button" className="finish-btn" onClick={fetchMedicineInfo}>Get Help</button>
                 </div>
               </form>
             ) : (
