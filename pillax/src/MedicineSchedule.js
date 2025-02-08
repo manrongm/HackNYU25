@@ -175,7 +175,7 @@ const MedicineSchedule = () => {
                     <p><strong>Details:</strong> {medicineInfo?.details}</p>
                   </div>
                   <div className="button-group">
-                    <button type="button" className="cancel-btn" onClick={() => setStep(4)}>Cancel</button>
+                    <button type="button" className="finish-btn" onClick={() => setStep(4)}>Cancel</button>
                     <button type="button" className="finish-btn" onClick={() => {handleFinish(true); }}>Finish</button>
                   </div>
                 </div>
