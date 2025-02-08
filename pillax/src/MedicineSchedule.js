@@ -109,7 +109,7 @@ const MedicineSchedule = () => {
       {showAddPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <button className="close-btn" onClick={() => { setShowAddPopup(false); setStep(1); }}></button>
+          <button className="close-btn" onClick={() => { setShowAddPopup(false); setStep(1); }}>×</button>
             {step === 1 ? (
               <div className="popup-options">
                 <div className="popup-option" onClick={() => setStep(2)}>
