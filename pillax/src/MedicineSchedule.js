@@ -15,6 +15,7 @@ const MedicineSchedule = () => {
   const [step, setStep] = useState(1);
   const [timeSlots, setTimeSlots] = useState([]);
   const [medicineList, setMedicineList] = useState([]);
+  const [helpRequested, setHelpRequested] = useState(false);
 
   // Simulating Backend API Call
   const fetchMedicineInfo = async () => {
@@ -22,7 +23,7 @@ const MedicineSchedule = () => {
       setMedicineInfo({
         name: medicineName,
         brand: "Example Brand",
-        details: "This medicine is used for treating XYZ condition.",
+        details: "Have the medicine with a meal, two times a day.",
       });
       setStep(3);
     }, 1000);
@@ -41,13 +42,23 @@ const MedicineSchedule = () => {
     setShowInfoPopup(true);
   };
 
-  const handleFinish = () => {
-    const newMedicineEntries = timeSlots.map(time => ({
-      name: medicineName,
-      time,
-      tip,
-      pieces,
-    }));
+  const handleFinish = (helpRequested) => {
+    let newMedicineEntries;
+    
+    if (helpRequested) {
+      newMedicineEntries = [
+        { name: medicineName, time: "08:00", tip: "Have with a meal", pieces: "3", occurrence: "2" },
+        { name: medicineName, time: "13:00", tip: "Have with a meal", pieces: "3", occurrence: "2" }
+      ];
+    } else {
+      newMedicineEntries = timeSlots.map(time => ({
+        name: medicineName,
+        time,
+        tip,
+        pieces,
+        occurrence,
+      }));
+    }
     
     const updatedList = [...medicineList, ...newMedicineEntries].sort((a, b) => a.time.localeCompare(b.time));
     setMedicineList(updatedList);
@@ -137,7 +148,7 @@ const MedicineSchedule = () => {
                 </label>
                 <div className="button-group">
                   <button type="button" className="finish-btn" onClick={() => setStep(1)}>Cancel</button>
-                  <button type="button" className="finish-btn" onClick={() => {handleFinish()}}>Finish</button>
+                  <button type="button" className="finish-btn" onClick={() => {handleFinish(false)}}>Finish</button>
                 </div>
               </form>
             ) : step === 4 ? (
@@ -165,7 +176,7 @@ const MedicineSchedule = () => {
                   </div>
                   <div className="button-group">
                     <button type="button" className="cancel-btn" onClick={() => setStep(4)}>Cancel</button>
-                    <button type="button" className="finish-btn" onClick={() => { setShowPopup(false); setStep(1); }}>Finish</button>
+                    <button type="button" className="finish-btn" onClick={() => {handleFinish(true); }}>Finish</button>
                   </div>
                 </div>
               )}
