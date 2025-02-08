@@ -1,0 +1,102 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Main Container - Full Screen */
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #d1d5db; /* Medium gray */
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Welcome Button */
+  .header button {
+    background: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Add Button */
+  .add-button {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+  }
+  
+  .add-button button {
+    background: #4b5563; /* Dark gray */
+    color: white;
+    padding: 14px 28px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Scrollable Medicine List - Full Height */
+  .medicine-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #d1d5db;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f9fafb;
+  }
+  
+  /* Medicine Item */
+  .medicine-item {
+    display: flex;
+    align-items: center;
+    background: #e5e7eb; /* Light gray */
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Medicine Image */
+  .medicine-item .image {
+    width: 80px;
+    height: 80px;
+    background: #6b7280; /* Placeholder color */
+    border-radius: 10px;
+  }
+  
+  /* Medicine Description */
+  .medicine-item p {
+    margin-left: 20px;
+    font-size: 1.2rem;
+  }
+
+  
+  
