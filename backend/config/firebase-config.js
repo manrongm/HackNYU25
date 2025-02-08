@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./campusquestctp2024-firebase-adminsdk-8xujr-92d56a2ab5.json'); // Replace with your actual path
+const serviceAccount = require('./pillax-nyu25-firebase-adminsdk-fbsvc-6593b5e119.json'); // Replace with your actual path
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
