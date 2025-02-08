@@ -9,6 +9,8 @@ const MedicineSchedule = () => {
   const [step, setStep] = useState(1);
   const [medicineName, setMedicineName] = useState("");
   const [medicineInfo, setMedicineInfo] = useState(null);
+  const [occurrence, setOccurrence] = useState("");
+  const [timeSlots, setTimeSlots] = useState([]);
 
   // Simulating Backend API Call
   const fetchMedicineInfo = async () => {
@@ -34,7 +36,17 @@ const MedicineSchedule = () => {
     setSelectedMedicine(medicine);
     setShowInfoPopup(true);
   };
+  const handleOccurrenceChange = (e) => {
+    const value = parseInt(e.target.value) || 0;
+    setOccurrence(value);
+    setTimeSlots(Array(value).fill(""));
+  };
 
+  const handleTimeChange = (index, value) => {
+    const updatedTimeSlots = [...timeSlots];
+    updatedTimeSlots[index] = value;
+    setTimeSlots(updatedTimeSlots);
+  };
   return (
     <div className="container">
       <div className="header">
@@ -93,7 +105,10 @@ const MedicineSchedule = () => {
             ) : step === 2 ? (
               <form className="medicine-form">
                 <label>Name: <input type="text" name="name" /></label>
-                <label>Occurrence: <input type="text" name="occurrence" /></label>
+                <label>Occurrence: <input type="number" min="1" value={occurrence} onChange={handleOccurrenceChange} /></label>
+              {timeSlots.map((time, index) => (
+                <label key={index}>Time {index + 1}: <input type="time" value={time} onChange={(e) => handleTimeChange(index, e.target.value)} /></label>
+              ))}
                 <label>Date/Time: <input type="date" name="date-time" /></label>
                 <label>Notification:
                   <select name="notification">
