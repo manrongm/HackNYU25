@@ -195,5 +195,166 @@ body {
     cursor: pointer;
 }
 
-  
-  
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/* Finish Button */
+.finish-btn {
+    background: #6b7280;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.finish-btn:hover {
+    background: #4b5563;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background: #d1d5db;
+    color: black;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.cancel-btn:hover {
+    background: #b0b3b8;
+}
+
+/* Help Button */
+.help-btn {
+    background: #6b7280;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.help-btn:hover {
+    background: #4b5563;
+}
+
+/* Medicine Info Popup */
+.medicine-info-popup {
+    text-align: left;
+}
+
+.medicine-info-box {
+    background: #d1d5db;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Medicine List */
+.medicine-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f9fafb;
+}
+
+/* Medicine Item */
+.medicine-item {
+    display: flex;
+    align-items: center;
+    background: #e5e7eb;
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.medicine-item:hover {
+    background: #d1d5db;
+}
+
+/* Medicine Image */
+.image {
+    width: 80px;
+    height: 80px;
+    background: #6b7280;
+    border-radius: 10px;
+}
+
+/* Medicine Info */
+.medicine-info {
+    flex-grow: 1;
+    margin-left: 20px;
+    font-size: 1.2rem;
+}
+
+/* View Details Button */
+.add-cart-btn {
+    background: #4b5563;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-cart-btn:hover {
+    background: #374151;
+}
+
+/* Medicine Detail Page */
+.medicine-detail {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.medicine-image {
+    width: 100px;
+    height: 100px;
+    background: #6b7280;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.medicine-info-detail {
+    flex-grow: 1;
+    font-size: 1.2rem;
+}
+
+/* Back Button */
+.back-btn {
+    background: #4b5563;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.back-btn:hover {
+    background: #374151;
+}
+
