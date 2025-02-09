@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
-import { auth } from "./config/firebase";
-import { signOut, onAuthStateChanged } from "firebase/auth";
+// import { auth } from "./config/firebase";
+// import { signOut, onAuthStateChanged } from "firebase/auth";
 
 const MedicineSchedule = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -125,27 +125,27 @@ const MedicineSchedule = () => {
 
   // Implementing Use States for authorization
 
-  let [currentUser, setUser] = useState([]);
-  const [currentForm, setCurrentForm] = useState("LogOut");
+  // let [currentUser, setUser] = useState([]);
+  // const [currentForm, setCurrentForm] = useState("LogOut");
 
-  const showLogin = () => setCurrentForm("Login");
-  const showLogOut = () => setCurrentForm("LogOut");
+  // const showLogin = () => setCurrentForm("Login");
+  // const showLogOut = () => setCurrentForm("LogOut");
 
-  const handleSignOut = () => {
-    signOut(auth);
-  };
+  // const handleSignOut = () => {
+  //   signOut(auth);
+  // };
 
-  onAuthStateChanged(auth, (user) => {
-    //if user is signed in
-    if (user) {
-      setUser(user);
-      // console.log(currentUser);
-      showLogOut();
-    } else {
-      showLogin();
-      setUser([]);
-    }
-  });
+  // onAuthStateChanged(auth, (user) => {
+  //   //if user is signed in
+  //   if (user) {
+  //     setUser(user);
+  //     // console.log(currentUser);
+  //     showLogOut();
+  //   } else {
+  //     showLogin();
+  //     setUser([]);
+  //   }
+  // });
 
   return (
     <div className="container">
