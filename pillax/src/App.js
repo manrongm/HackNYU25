@@ -9,13 +9,5 @@ export default function App() {
     <div className="container">
       <MedicineSchedule />
     </div>
-
-    // <div className="container">
-    //   <Router>
-    //     <Route>
-    //       <MedicineSchedule />
-    //     </Route>
-    //   </Router>
-    // </div>
   );
 }
